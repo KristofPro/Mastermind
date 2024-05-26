@@ -10,24 +10,9 @@ namespace Mastermind
     {
         public override void ToonKleur()
         {
-            switch (Kleur)
-            {
-                case 'R':
-                    Console.BackgroundColor = ConsoleColor.DarkRed;
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    break;
-                case 'W':
-                    Console.BackgroundColor = ConsoleColor.White;
-                    Console.ForegroundColor = ConsoleColor.White;
-                    break;
-                case 'B':
-                    Console.BackgroundColor = ConsoleColor.Black;
-                    Console.ForegroundColor = ConsoleColor.Black;
-                    break;
-            }
+            base.ToonKleur();
             Console.Write($"{Kleur}");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
             Console.Write($" ");
         }
     }

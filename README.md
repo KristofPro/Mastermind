@@ -1,3 +1,3 @@
-Mastermind in a Console Application.
-Written with C# in Visual Studio.
-A project idea for my students before we jump into GUI.
+Mastermind in een console Applicatie,
+geschreven in C# in de IDE Visual Studio.
+Een project dat mijn leerlingen zouden kunnen maken zonder enige kennis van GUI zoals WPF.
