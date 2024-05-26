@@ -99,7 +99,7 @@ namespace Mastermind
             //Vervang elk afwijkend teken met de standaardwaarde 'R'
             for (int i = 0; i < 4; i++)
             {
-                if (tekeninvoer[i] != 'R' && tekeninvoer[i] != 'G' && tekeninvoer[i] != 'B' && tekeninvoer[i] != 'Y' && tekeninvoer[i] != 'P' && tekeninvoer[i] != 'O')
+                if (!"RGBYPO".Contains(tekeninvoer[i]))
                 {
                     tekeninvoer[i] = 'R';
                 }
@@ -189,7 +189,7 @@ namespace Mastermind
             // Vul de rest met zwarte pinnen
             for (int i = index; i < 4; i++)
             {
-                nieuwePinArray[i] = new Pin { Kleur = 'B' }; // Lege (zwarte) pin voor de rest
+                nieuwePinArray[i] = new Pin { Kleur = 'Z' }; // Lege (zwarte) pin voor de rest
             }
 
             pinReeksen.Add(nieuwePinArray); // Voeg de nieuwe pinarray toe aan de lijst
@@ -204,7 +204,7 @@ namespace Mastermind
             {
                 //Pionnen toevoegen
                 kleurenArray = ingegevenKleurenReeksen[i];
-                Pin[] currentPinArray = pinReeksen[i];
+                Pin[] huidigePinArray = pinReeksen[i];
                 Console.Write("║ ");
                 for (int j = 0; j < 4; j++)
                 {
@@ -215,7 +215,7 @@ namespace Mastermind
                 //Pinnen toevoegen
                 for (int j = 0; j < 4; j++)
                 {
-                    currentPinArray[j].ToonKleur();
+                    huidigePinArray[j].ToonKleur();
                 }
                 Console.WriteLine($"║  {rondenReeksen[i]:00}  ║");
 

@@ -11,8 +11,7 @@ namespace Mastermind
         static readonly Random rng = new();
         public Pion()
         {
-            int kleurwaarde = rng.Next(1, 7);
-            switch (kleurwaarde)
+            switch (rng.Next(1, 7))
             {
                 case 1:
                     Kleur = 'R'; // Rood (red)
@@ -47,39 +46,11 @@ namespace Mastermind
         {
             return base.GetHashCode();
         }
-
         public override void ToonKleur()
         {
-            switch (Kleur)
-            {
-                case 'R':
-                    Console.BackgroundColor = ConsoleColor.DarkRed;
-                    Console.ForegroundColor = ConsoleColor.DarkRed;
-                    break;
-                case 'G':
-                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    break;
-                case 'B':
-                    Console.BackgroundColor = ConsoleColor.DarkCyan;
-                    Console.ForegroundColor = ConsoleColor.DarkCyan;
-                    break;
-                case 'Y':
-                    Console.BackgroundColor = ConsoleColor.DarkYellow;
-                    Console.ForegroundColor = ConsoleColor.DarkYellow;
-                    break;
-                case 'P':
-                    Console.BackgroundColor = ConsoleColor.Magenta;
-                    Console.ForegroundColor = ConsoleColor.Magenta;
-                    break;
-                case 'O':
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    break;
-            }
+            base.ToonKleur();
             Console.Write($" {Kleur} ");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
+            Console.ResetColor();
             Console.Write($" ");
         }
     }
